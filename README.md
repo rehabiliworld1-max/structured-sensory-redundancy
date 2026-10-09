@@ -8,7 +8,7 @@ Kenshi Obaru, rehabiliworld, Kumamoto City, Japan
 
 ## Abstract
 
-Motor-output ablation studies have identified small numbers of disproportionately critical network units, but the analogous question for sensory input — how much proprioceptive loss a policy tolerates, and whether this tolerance is anatomically uniform — has received less systematic, cross-seed-replicated attention. Using the Unitree G1 humanoid, we applied joint-state ablation (zeroing joint-position and joint-velocity observations, leaving motor output untouched) across a widening set of conditions in eight independently trained policies. Single-joint and small paired-joint ablations never produced a fall within the 5.0-second evaluation horizon. Unexpectedly, ablating an entire body half (13 of 29 joints) or the trunk's 3 joints alone also produced no falls. Combining half-body with trunk loss (16 joints) sharply increased fall rate, depending on anatomical identity rather than joint count: ten random 16-joint subsets yielded fall proportions from 0.0% to 93.1% (mean 33.9%, SD 37.8%). Between the two anatomical 16-joint conditions, right-half-plus-trunk loss produced falls in 65.3% of trials originally versus 19.4% for the mirror-image loss (consistent in direction in 7 of 8 seeds); a repeated-measures re-evaluation across five additional initial conditions attenuated this difference (49.4% vs. 43.1%, overlapping 95% CIs), while mirrored initial states confirmed the asymmetry's direction, not magnitude, is preserved. An alternative fault model (freezing rather than zeroing) produced no falls in either 16-joint condition, showing this transition is specific to zero-substitution. The asymmetry did not persist at a further-degraded 19-joint condition, where fall proportions were high and comparable on both sides; removing 22 or more of 29 joints' proprioception was almost uniformly fatal (98.6-100%). Continuous metrics confirmed the 12 single-joint ablations, none causing falls, produced only minor (~10-15%) degradation rather than a floor effect. At the 16-joint condition, terminal joint angles matched the policy's default posture exactly in every fall examined, including joints with intact proprioception, indicating the same "collapse-to-default-posture" pattern previously found for motor-output loss. These results show that tolerance for joint-state ablation depends on anatomical identity rather than joint count alone — an entire body half is tolerated, but little more — and that a left-right asymmetry near this transition is robust in direction, though not magnitude, across initial conditions.
+Motor-output ablation studies of trained locomotion policies have identified small numbers of disproportionately critical network units, but the analogous question for sensory input — how much proprioceptive loss a policy tolerates, and whether this loss is evenly distributed — has received less systematic, cross-seed-replicated attention. Using the Unitree G1 humanoid, we applied joint-state ablation (zeroing joint-position and joint-velocity observations, leaving motor output untouched) across widening conditions in eight independently trained policies. Single-joint and small paired-joint ablations never produced a fall within the 5.0-second evaluation horizon. Ablating an entire body half (13 of 29 joints) or the trunk's 3 joints alone also produced no falls. Combining half-body with trunk loss (16 joints) sharply increased fall rate, depending on anatomical identity rather than joint count: ten random 16-joint subsets yielded fall proportions from 0.0% to 93.1% (mean 33.9%, SD 37.8%). Right-half-plus-trunk loss produced falls in 65.3% of trials versus 19.4% for the mirror-image loss (consistent in direction in 7 of 8 seeds); repeating across five additional initial conditions attenuated this difference (49.4% vs. 43.1%, overlapping CIs), with only the direction, not the magnitude, preserved. Freezing rather than zeroing produced no falls in either 16-joint condition, showing the transition is specific to zero-substitution. The asymmetry did not persist at a further-degraded 19-joint condition; removing 22 or more of 29 joints' proprioception was almost uniformly fatal (98.6-100%). The 12 single-joint ablations tested caused only minor (~10-15%) degradation, not a floor effect. At the 16-joint condition, terminal joint angles diverged substantially from default — by approximately 25° for ablated joints and 16° for intact joints, versus approximately 3° during normal walking — indicating an active, evolving failure rather than the passive collapse-to-default pattern previously found for motor-output loss. These results show that joint-state-ablation tolerance depends on anatomical identity rather than joint count — an entire body half is tolerated, but little more — and that a left-right asymmetry near this transition is consistent in direction, not magnitude, across initial conditions.
 
 ## Repository contents
 
@@ -18,7 +18,7 @@ notebooks/
                                        verification, sensory-ablation implementation, single-joint
                                        and paired-combination screening, whole-body and half-body/
                                        trunk sweeps, 16/19/22-joint boundary characterization,
-                                       collapse-to-default-posture mechanism analysis, and the full
+                                       failure-pattern (mechanism) analysis, and the full
                                        set of reviewer-response experiments (intact baseline,
                                        continuous performance metrics, repeated initial conditions,
                                        observation-normalization check, previous-action control,
@@ -30,6 +30,10 @@ notebooks/
                                        Supplementary notebook: default-posture collapse check
                                        extended to all 8 seeds, heading-change experiment, and
                                        mirrored-state test (reviewer-requested gap analyses).
+  g1_sensory_ablation4_with_figure4_fix.ipynb
+                                       Re-measurement of the Section 3.6 failure-pattern analysis
+                                       (terminal state captured before the environment's automatic
+                                       reset) and regeneration of Figure 4. Includes executed outputs.
 checkpoints/
   g1_velocity_seed1_model_2999.pt     Trained PPO policy checkpoints (8 independently trained
   ...                                 seeds, one file per seed) used throughout the
@@ -64,6 +68,7 @@ joints at every control step, without modifying policy weights or motor output.
 3. Run cells in order — each experiment section is self-contained and
    resume-safe (results are appended to CSV files as trials complete, so a
    section can be re-run without repeating already-completed trials).
+**Note on numerical reproducibility.** GPU simulation is not bit-wise deterministic. Re-running the failure-pattern analysis yields values that differ slightly from those in the manuscript (e.g., mean deviation from default 25.8° / 15.3° / 2.7° vs. ≈25° / ≈16° / ≈3°; maximum tracking error 205.6° vs. 208.9°), without changing the qualitative result.
 
 ## Companion paper
 
