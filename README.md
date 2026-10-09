@@ -31,7 +31,7 @@ notebooks/
                                        mirrored-state test (reviewer-requested gap analyses).
                                        Section A (default-posture check extended to 8 seeds) is
                                        superseded by the corrected analysis in
-                                       g1_sensory_ablation4_with_figure4_fix3.ipynb; it is retained
+                                       g1_sensory_ablation4_with_figure4_fix.ipynb; it is retained
                                        for transparency only.
   g1_sensory_ablation4_with_figure4_fix.ipynb
                                        Re-measurement of the Section 3.6 failure-pattern analysis
