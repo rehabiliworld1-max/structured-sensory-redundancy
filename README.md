@@ -19,6 +19,9 @@ notebooks/
                                        and paired-combination screening, whole-body and half-body/
                                        trunk sweeps, 16/19/22-joint boundary characterization,
                                        failure-pattern (mechanism) analysis, and the full
+                                       NOTE: the failure-pattern analysis in this notebook predates the
+                                       measurement correction and is superseded by
+                                       g1_sensory_ablation4_with_figure4_fix.ipynb.
                                        set of reviewer-response experiments (intact baseline,
                                        continuous performance metrics, repeated initial conditions,
                                        observation-normalization check, previous-action control,
