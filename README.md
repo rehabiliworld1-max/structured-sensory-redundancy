@@ -27,9 +27,12 @@ notebooks/
                                        logistic regression, initial-condition/mirrored-state
                                        diversification, extended pre-fall trajectory logging).
   g1_reviewer2_gap_experiments_v5 (2).ipynb
-                                       Supplementary notebook: default-posture collapse check
-                                       extended to all 8 seeds, heading-change experiment, and
+                                       Supplementary notebook: heading-change experiment and
                                        mirrored-state test (reviewer-requested gap analyses).
+                                       Section A (default-posture check extended to 8 seeds) is
+                                       superseded by the corrected analysis in
+                                       g1_sensory_ablation4_with_figure4_fix3.ipynb; it is retained
+                                       for transparency only.
   g1_sensory_ablation4_with_figure4_fix.ipynb
                                        Re-measurement of the Section 3.6 failure-pattern analysis
                                        (terminal state captured before the environment's automatic
