@@ -68,6 +68,7 @@ joints at every control step, without modifying policy weights or motor output.
 3. Run cells in order — each experiment section is self-contained and
    resume-safe (results are appended to CSV files as trials complete, so a
    section can be re-run without repeating already-completed trials).
+   
 **Note on numerical reproducibility.** GPU simulation is not bit-wise deterministic. Re-running the failure-pattern analysis yields values that differ slightly from those in the manuscript (e.g., mean deviation from default 25.8° / 15.3° / 2.7° vs. ≈25° / ≈16° / ≈3°; maximum tracking error 205.6° vs. 208.9°), without changing the qualitative result.
 
 ## Companion paper
