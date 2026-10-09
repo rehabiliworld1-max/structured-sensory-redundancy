@@ -29,7 +29,7 @@ notebooks/
                                        NOTE: the failure-pattern analysis in this notebook predates the
                                        measurement correction and is superseded by
                                        g1_sensory_ablation4_with_figure4_fix.ipynb.
-  g1_reviewer2_gap_experiments_v5 (2).ipynb
+ g1_reviewer2_gap_experiments_v5 (2).ipynb
                                        Supplementary notebook: heading-change experiment and
                                        mirrored-state test (reviewer-requested gap analyses).
                                        Section A (default-posture check extended to 8 seeds) is
