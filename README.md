@@ -19,9 +19,6 @@ notebooks/
                                        and paired-combination screening, whole-body and half-body/
                                        trunk sweeps, 16/19/22-joint boundary characterization,
                                        failure-pattern (mechanism) analysis, and the full
-                                       NOTE: the failure-pattern analysis in this notebook predates the
-                                       measurement correction and is superseded by
-                                       g1_sensory_ablation4_with_figure4_fix.ipynb.
                                        set of reviewer-response experiments (intact baseline,
                                        continuous performance metrics, repeated initial conditions,
                                        observation-normalization check, previous-action control,
@@ -29,6 +26,9 @@ notebooks/
                                        gait characterization, disturbance robustness, mixed-effects
                                        logistic regression, initial-condition/mirrored-state
                                        diversification, extended pre-fall trajectory logging).
+                                       NOTE: the failure-pattern analysis in this notebook predates the
+                                       measurement correction and is superseded by
+                                       g1_sensory_ablation4_with_figure4_fix.ipynb.
   g1_reviewer2_gap_experiments_v5 (2).ipynb
                                        Supplementary notebook: heading-change experiment and
                                        mirrored-state test (reviewer-requested gap analyses).
